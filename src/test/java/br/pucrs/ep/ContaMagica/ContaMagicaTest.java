@@ -119,6 +119,34 @@ public class ContaMagicaTest {
         Assertions.assertEquals(155750.0, c10.getSaldo());
     }
 
+    @Test
+    public void depositaEduardoTest(){
+        ContaMagica c33 = new ContaMagica("Eduardo", 4795, 100000, Categoria.Gold);
+        c33.deposito(100000.0);
+        Assertions.assertEquals(Categoria.Platinum.toString(), c33.getCategoria());
+    }
+
+    @Test
+    public void depositaEduardoTest2(){
+        ContaMagica c34 = new ContaMagica("Eduardo", 4795, 100000, Categoria.Gold);
+        c34.deposito(100000.0);
+        Assertions.assertEquals(201000.0, c34.getSaldo());
+    }
+
+    @Test
+    public void depositaFabianaTest(){
+        ContaMagica c35 = new ContaMagica("Fabiana", 3879, 50000, Categoria.Gold);
+        c35.deposito(-1500.0);
+        Assertions.assertEquals(Categoria.Gold.toString(), c35.getCategoria());
+    }
+
+    @Test
+    public void depositaFabianaTest2(){
+        ContaMagica c36 = new ContaMagica("Fabiana", 3879, 50000, Categoria.Gold);
+        c36.deposito(-1500.0);
+        Assertions.assertEquals(50000, c36.getSaldo());
+    }
+
     // --------------------------------------
 
     // ------------RETIRADAS ----------------
